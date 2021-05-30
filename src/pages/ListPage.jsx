@@ -7,7 +7,7 @@ export default function ListPage() {
     const [searchTerm, setSearchTerm]=useState('')
     const inputRef = useRef()
     useEffect(()=>{
-        fetch('https://swapi.dev/api/people/')
+        fetch('http://swapi.dev/api/people/')
         .then(resp=>resp.json())
         .then(data=>setCharacterList(data.results)) 
     },[])
@@ -25,7 +25,7 @@ export default function ListPage() {
                 <h1 className="p-5">List of Star-War characters</h1>
                 <div className="input-group justify-content-center pb-5">
                     <div className="form-outline">
-                        <input ref={inputRef} type="search" id="form1" className="form-control" Placeholder="Search"  />
+                        <input ref={inputRef} type="search" id="form1" className="form-control" placeholder="Search"  />
                     </div>
                     <button type="button" class="btn btn-primary"  onClick={handleOnClick}  >
                         <BiSearchAlt />

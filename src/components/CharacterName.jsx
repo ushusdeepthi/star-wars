@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import { Link } from 'react-router-dom';
 
-export default function CharacterName({character}) {
+export default function CharacterName({character,index}) {
     const [showText, setShowText] = useState(false)
     const handleOnClick =()=>{
         showText ? setShowText(false): setShowText(true)}
@@ -14,7 +14,7 @@ export default function CharacterName({character}) {
                     <p>Mass: { character.mass }</p>
                     <p>Birth year: { character.birth_year }</p>
                     <p>Gender: { character.gender }</p> 
-                    <Link>View more details</Link> 
+                    <Link to={`/list/${index}`}>View more details</Link> 
                 </> 
                     )}         
         </div>

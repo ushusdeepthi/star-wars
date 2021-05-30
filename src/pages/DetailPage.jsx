@@ -16,18 +16,20 @@ export default function DetailPage(props) {
     },[])
 
     return (
-        <div>
+        <div className="text-white bg">          
             {!characterDetail && <p>Loading...</p>}
             <div>
                 { characterDetail && (
                     <>
-                    <h2>{characterDetail.name}</h2>
-                    <p>Height: { characterDetail.height }</p>
-                    <p>Mass: { characterDetail.mass }</p>
-                    <p>Hair Color: { characterDetail.hair_color }</p>
-                    <p>Eye Color: { characterDetail.eye_color}</p>
-                    <p>Birth year: { characterDetail.birth_year }</p>
-                    <p>Gender: { characterDetail.gender }</p>
+                    <div className="text-center p-5">
+                        <h2 className="pb-5">{characterDetail.name}</h2>
+                        <h5 className="p-2">Height: { characterDetail.height }</h5>
+                        <h5 className="p-2">Mass: { characterDetail.mass }</h5>
+                        <h5 className="p-2">Hair Color: { characterDetail.hair_color }</h5 >
+                        <h5  className="p-2">Eye Color: { characterDetail.eye_color}</h5 >
+                        <h5  className="p-2">Birth year: { characterDetail.birth_year }</h5 >
+                        <h5  className="p-2">Gender: { characterDetail.gender }</h5 >
+                    </div>
                     <HomeWorld homeworldapi={characterDetail.homeworld} />
                     <h5 className="text-center"> Films </h5>
                     <TableStyled >

@@ -18,7 +18,7 @@ export default function Starship({starship}) {
                 <td>{starships.cost_in_credits}</td>
                 <td>{starships.crew}</td>
                 <td>{starships.passengers}</td>
-                <td>{starships.vehicle_class}</td>
+                <td>{starships.starship_class}</td>
            </tr>
         )}
         </>

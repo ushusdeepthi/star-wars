@@ -10,7 +10,7 @@ export default function DetailPage(props) {
     const [ characterDetail, setCharacterDetail] =useState(null);
     const id= props.match.params.id
     useEffect(()=>{
-        fetch(`https://swapi.dev/api/people/${id}`)
+        fetch(`https://swapi.dev/api/people/${id}/`)
         .then(resp=>resp.json())
         .then(data=> setCharacterDetail(data))
     },[])

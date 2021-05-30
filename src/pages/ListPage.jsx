@@ -7,7 +7,7 @@ export default function ListPage() {
     const [searchTerm, setSearchTerm]=useState('')
     const inputRef = useRef()
     useEffect(()=>{
-        fetch('http://swapi.dev/api/people/')
+        fetch('https://swapi.dev/api/people/')
         .then(resp=>resp.json())
         .then(data=>setCharacterList(data.results)) 
     },[])

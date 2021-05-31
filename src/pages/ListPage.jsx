@@ -27,7 +27,7 @@ export default function ListPage() {
                     <div className="form-outline">
                         <input ref={inputRef} type="search" id="form1" className="form-control" placeholder="Search"  />
                     </div>
-                    <button type="button" class="btn btn-primary"  onClick={handleOnClick}  >
+                    <button type="button" className="btn btn-primary"  onClick={handleOnClick}  >
                         <BiSearchAlt />
                     </button>
                 </div>

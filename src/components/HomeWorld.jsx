@@ -2,9 +2,10 @@ import React, { useState, useEffect} from 'react'
 import { TableStyled } from '../styles/TableStyled'
 
 export default function HomeWorld({homeworldapi}) {
+    const updatedPlanet = homeworldapi.replace(/^http:\/\//i, 'https://');
     const [homeWorld, setHomeWorld]= useState(null)
     useEffect(()=>{
-        fetch(homeworldapi)
+        fetch(updatedPlanet)
         .then(resp => resp.json())
         .then(data => setHomeWorld(data))
     },[])
@@ -12,7 +13,7 @@ export default function HomeWorld({homeworldapi}) {
         <>
             <h5 className="text-center">Home World</h5>
             <TableStyled>
-                {!homeWorld && <p>Loading...</p>}
+                {!homeWorld && <thead><tr><th>Loading...</th></tr></thead>}
                 <>
                     { homeWorld && (
                         <tbody>

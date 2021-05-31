@@ -9,7 +9,7 @@ export default function Film({film}) {
     },[])
     return (
     <>
-            {!films && <p>Loading...</p>}
+            {!films && <tr><th>Loading...</th></tr>}
                 { films && (
                     <tr>
                     <td>{films.title}</td>

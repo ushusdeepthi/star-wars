@@ -9,7 +9,7 @@ export default function Vehicle({vehicle}) {
     },[])
     return (
         <>
-        {!vehicles && <p>Loading...</p>} 
+        {!vehicles && <tr><th>Loading...</th></tr>} 
         { vehicles && (
             <tr>
                 <td>{vehicles.name}</td>

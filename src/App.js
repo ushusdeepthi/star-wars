@@ -8,10 +8,10 @@ function App() {
   return (
     <>
     <Switch>
+      <Route path='/list/:id' component ={ DetailPage } />
       <Route path="/list">
         <ListPage />
       </Route>
-      <Route path='/:id' component ={ DetailPage } />
       <Route path="/">
         <HomePage />
       </Route>

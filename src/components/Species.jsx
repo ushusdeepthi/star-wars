@@ -9,7 +9,7 @@ export default function Species({singleSpecies}) {
     },[])
     return (
         <>
-        {!species && <p>Loading...</p>} 
+        {!species && <tr><th>Loading...</th></tr>} 
         { species && (
             <tr>
                 <td>{species.name}</td>

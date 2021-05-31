@@ -9,7 +9,7 @@ export default function Starship({starship}) {
     },[])
     return (
         <>
-        {!starships && <p>Loading...</p>} 
+        {!starships && <tr><th>Loading...</th></tr>} 
         { starships && (
             <tr>
                 <td>{starships.name}</td>

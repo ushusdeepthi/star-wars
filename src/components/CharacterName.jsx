@@ -14,7 +14,7 @@ export default function CharacterName({character,index}) {
                     <p>Mass: { character.mass }</p>
                     <p>Birth year: { character.birth_year }</p>
                     <p>Gender: { character.gender }</p> 
-                    <Link to={`/${index}`}>View more details</Link> 
+                    <Link to={`/list/${index}`}>View more details</Link> 
                 </> 
                     )}         
         </div>

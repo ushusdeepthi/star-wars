@@ -21,103 +21,100 @@ export default function DetailPage(props) {
             <div>
                 { characterDetail && (
                     <>
-                    <div className="text-center p-5">
-                        <h2 className="pb-5">{characterDetail.name}</h2>
-                        <h5 className="p-2">Height: { characterDetail.height }</h5>
-                        <h5 className="p-2">Mass: { characterDetail.mass }</h5>
-                        <h5 className="p-2">Hair Color: { characterDetail.hair_color }</h5 >
-                        <h5  className="p-2">Eye Color: { characterDetail.eye_color}</h5 >
-                        <h5  className="p-2">Birth year: { characterDetail.birth_year }</h5 >
-                        <h5  className="p-2">Gender: { characterDetail.gender }</h5 >
-                    </div>
-                    <HomeWorld homeworldapi={characterDetail.homeworld} />
-                    <h5 className="text-center"> Films </h5>
-                    <TableStyled >
-                         <tbody>
-                             <tr>
-                                 <th>Name</th>
-                                 <th>Episode</th>
-                                 <th>Opening Crawl</th>
-                                 <th>Director</th>
-                                 <th>Producer</th>
-                                 <th>Release Date</th>
-                             </tr>
-                  
-                        {characterDetail.films.map((film,index) =>{
-                          return <Film key = {index} film = {film} />
-                        })}
-                         </tbody>
-                           
-                         </TableStyled>
-               
-                  
-                    {characterDetail.vehicles.length!==0 &&(
-                        <>
-                        <h5 className="text-center">Vehicles</h5>
+                        <div className="text-center p-5">
+                            <h2 className="pb-5">{characterDetail.name}</h2>
+                            <h5 className="p-2">Height: { characterDetail.height }</h5>
+                            <h5 className="p-2">Mass: { characterDetail.mass }</h5>
+                            <h5 className="p-2">Hair Color: { characterDetail.hair_color }</h5 >
+                            <h5  className="p-2">Eye Color: { characterDetail.eye_color}</h5 >
+                            <h5  className="p-2">Birth year: { characterDetail.birth_year }</h5 >
+                            <h5  className="p-2">Gender: { characterDetail.gender }</h5 >
+                        </div>
+                        <HomeWorld homeworldapi={characterDetail.homeworld} />
+                        <h5 className="text-center"> Films </h5>
                         <TableStyled >
-                         <tbody>
-                             <tr>
-                                 <th>Name</th>
-                                 <th>Model</th>
-                                 <th>Manufacturer</th>
-                                 <th>cost</th>
-                                 <th>crew</th>
-                                 <th>passengers</th>
-                                 <th>class</th>
-                             </tr>
-                              {characterDetail.vehicles.map((vehicle,index) =>{
-                            return <Vehicle key= { index} vehicle={ vehicle } />
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Episode</th>
+                                    <th>Opening Crawl</th>
+                                    <th>Director</th>
+                                    <th>Producer</th>
+                                    <th>Release Date</th>
+                                </tr>
+                    
+                            {characterDetail.films.map((film,index) =>{
+                            return <Film key = {index} film = {film} />
                             })}
-                         </tbody>
-                           
-                         </TableStyled>
-                         </>
-                    )} 
-                    {characterDetail.starships.length!==0 &&(
-                        <>
-                        <h5 className="text-center">Starships</h5>
-                        <TableStyled >
-                         <tbody>
-                             <tr>
-                                 <th>Name</th>
-                                 <th>Model</th>
-                                 <th>Manufacturer</th>
-                                 <th>cost</th>
-                                 <th>crew</th>
-                                 <th>passengers</th>
-                                 <th>class</th>
-                             </tr>
-                              {characterDetail.starships.map((starship,index) =>{
-                            return <Starship key= { index} starship={ starship } />
-                            })}
-                         </tbody>
-                           
-                         </TableStyled>
-                         </>
-                    )}
-                {characterDetail.species.length!==0 &&(
-                        <>
-                        <h5 className="text-center">Species</h5>
-                        <TableStyled >
-                         <tbody>
-                             <tr>
-                                 <th>Name</th>
-                                 <th>Classification</th>
-                                 <th>Designation</th>
-                                 <th>Average Lifespan</th>
-                                 <th>Average Height</th>
-                                 <th>Language</th>
-                             </tr>
-                              {characterDetail.species.map((species,index) =>{
-                            return <Species key= { index} singleSpecies={ species } />
-                            })}
-                         </tbody>
-                           
-                         </TableStyled>
-                         </>
-                )}  
-                </>
-                
+                            </tbody>
+                            
+                            </TableStyled>
+             
+                        {characterDetail.vehicles.length!==0 &&(
+                            <>
+                                <h5 className="text-center">Vehicles</h5>
+                                <TableStyled >
+                                    <tbody>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Model</th>
+                                            <th>Manufacturer</th>
+                                            <th>cost</th>
+                                            <th>crew</th>
+                                            <th>passengers</th>
+                                            <th>class</th>
+                                        </tr>
+                                        {characterDetail.vehicles.map((vehicle,index) =>{
+                                        return <Vehicle key= { index} vehicle={ vehicle } />
+                                        })}
+                                    </tbody>
+                                </TableStyled>
+                            </>
+                        )} 
+                        {characterDetail.starships.length!==0 &&(
+                            <>
+                                <h5 className="text-center">Starships</h5>
+                                <TableStyled >
+                                    <tbody>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Model</th>
+                                            <th>Manufacturer</th>
+                                            <th>cost</th>
+                                            <th>crew</th>
+                                            <th>passengers</th>
+                                            <th>class</th>
+                                        </tr>
+                                        {characterDetail.starships.map((starship,index) =>{
+                                        return <Starship key= { index} starship={ starship } />
+                                        })}
+                                    </tbody>
+                                
+                                </TableStyled>
+                            </>
+                        )}
+                        {characterDetail.species.length!==0 &&(
+                            <>
+                                <h5 className="text-center">Species</h5>
+                                    <TableStyled >
+                                        <tbody>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Classification</th>
+                                                <th>Designation</th>
+                                                <th>Average Lifespan</th>
+                                                <th>Average Height</th>
+                                                <th>Language</th>
+                                            </tr>
+                                            {characterDetail.species.map((species,index) =>{
+                                            return <Species key= { index} singleSpecies={ species } />
+                                            })}
+                                        </tbody>
+                                    
+                                    </TableStyled>
+                            </>
+                        )}  
+                    </>
                 )}
             </div>
         </div>

@@ -30,8 +30,6 @@ export default function HomeWorld({homeworldapi}) {
                                 
                             </tr>
                             <tr>
-                            </tr>
-                            <tr>
                                 <td>{homeWorld.name}</td>
                                 <td>{homeWorld.rotation_period}</td>
                                 <td>{homeWorld.orbital_period}</td>

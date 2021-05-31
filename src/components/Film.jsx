@@ -1,14 +1,15 @@
 import React, { useState, useEffect} from 'react'
 
 export default function Film({film}) {
+    const updatedFilm = film.replace(/^http:\/\//i, 'https://');
     const [films, setFilms] = useState(null)
     useEffect(()=>{
-        fetch(film)
+        fetch(updatedFilm)
         .then(resp => resp.json())
         .then(data =>setFilms(data))
     },[])
     return (
-    <>
+        <>
             {!films && <tr><th>Loading...</th></tr>}
                 { films && (
                     <tr>

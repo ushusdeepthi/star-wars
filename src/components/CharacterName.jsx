@@ -16,7 +16,7 @@ export default function CharacterName({character,index}) {
                     <p>Gender: { character.gender }</p> 
                     <Link to={`/list/${index}`}>View more details</Link> 
                 </> 
-                    )}         
+            )}         
         </div>
     )
 }

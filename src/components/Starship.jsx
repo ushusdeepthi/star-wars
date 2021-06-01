@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
+import { TableStyled } from '../styles/TableStyled';
 
-export default function Starship({starship}) {
+export default function Starship({starship,index}) {
     const updatedStarship = starship.replace(/^http:\/\//i, 'https://');
     const [starships, setStarships] = useState(null)
     useEffect(()=>{
@@ -9,20 +10,43 @@ export default function Starship({starship}) {
         .then(data =>setStarships(data))
     },[])
     return (
-        <>
-            {!starships && <tr><th>Loading...</th></tr>} 
-            { starships && (
-                <tr>
-                    <td>{starships.name}</td>
-                    <td>{starships.model}</td>
-                    <td>{starships.manufacturer}</td>
-                    <td>{starships.cost_in_credits}</td>
-                    <td>{starships.crew}</td>
-                    <td>{starships.passengers}</td>
-                    <td>{starships.starship_class}</td>
-                </tr>
-            )}
-        </>
-       
+        <TableStyled>
+        {!starships && <thead><tr><th>Loading...</th></tr></thead>} 
+            <>
+                { starships && (
+                        <tbody>
+                            <tr>
+                                <th>Starship Number</th>
+                                <td>{index}</td>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <td>{starships.name}</td>
+                            </tr>
+                            <tr>
+                                <th>Model</th>
+                                <td>{starships.model}</td>
+                            </tr>
+                            <tr>
+                                <th>Cost</th>
+                                <td>{starships.cost_in_credits}</td>
+                            </tr>
+                            <tr>
+                                <th>Crew</th>
+                                <td>{starships.crew}</td>
+                            </tr>
+                            <tr>
+                                <th>Passengers</th>
+                                <td>{starships.passengers}</td>
+                            </tr>
+                            <tr>
+                                <th>Class</th>
+                                <td>{starships.starship_class}</td>
+                            </tr>
+                        </tbody>
+                )}
+            </>
+
+        </TableStyled>    
     )
 }

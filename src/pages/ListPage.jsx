@@ -13,10 +13,8 @@ export default function ListPage() {
     },[])
     const handleOnClick = ()=>{
         const input = inputRef.current
-        if(input.value !== "") {
             setSearchTerm(input.value)
-    }
-    input.value = ""
+        input.value = ""
         
     }
     return (

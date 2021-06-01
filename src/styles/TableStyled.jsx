@@ -7,8 +7,10 @@ const TableStyled=styled.table `
     border-radius:5px;
     margin:50px auto;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.3); 
-    width:90%;
+    max-width:90%;
+    min-width:60%;
     th{
+      padding: 0 2em;
       text-align:center;
       color:black;
     }

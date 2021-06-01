@@ -14,36 +14,49 @@ export default function HomeWorld({homeworldapi}) {
             <h5 className="text-center">Home World</h5>
             <TableStyled>
                 {!homeWorld && <thead><tr><th>Loading...</th></tr></thead>}
-                <>
-                    { homeWorld && (
-                        <tbody>
-                            <tr>
-                                <th>Name</th>
-                                <th>Rotation Period</th>
-                                <th>Orbital Period</th>
-                                <th>Diameter</th>
-                                <th>Climate</th>
-                                <th>Gravity</th>
-                                <th>terrain</th>
-                                <th>Surface Water</th>
-                                <th>Population</th>
-                                
-                            </tr>
-                            <tr>
-                                <td>{homeWorld.name}</td>
-                                <td>{homeWorld.rotation_period}</td>
-                                <td>{homeWorld.orbital_period}</td>
-                                <td>{homeWorld.diameter}</td>
-                                <td>{homeWorld.climate}</td>
-                                <td>{homeWorld.gravity}</td>
-                                <td>{homeWorld.terrain}</td>
-                                <td>{homeWorld.surface_water}</td>
-                                <td>{homeWorld.population}</td>
-                            </tr>
-                        </tbody>
-                    )}
+                    <>
+                        { homeWorld && (
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{homeWorld.name}</td>    
+                                </tr>
+                                <tr>
+                                    <th>Rotation Period</th>
+                                    <td>{homeWorld.rotation_period}</td>
+                                </tr>
+                                <tr>
+                                    <th>Orbital Period</th>
+                                    <td>{homeWorld.orbital_period}</td>
+                                </tr>   
+                                <tr>
+                                    <th>Diameter</th>
+                                    <td>{homeWorld.diameter}</td>
+                                </tr>
+                                <tr>
+                                    <th>Climate</th>
+                                    <td>{homeWorld.climate}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gravity</th>
+                                    <td>{homeWorld.gravity}</td>
+                                </tr>
+                                <tr>
+                                    <th>terrain</th>
+                                    <td>{homeWorld.terrain}</td>
+                                </tr>
+                                <tr>
+                                    <th>Surface Water</th>
+                                    <td>{homeWorld.surface_water}</td>
+                                </tr>
+                                <tr>
+                                    <th>Population</th>
+                                    <td>{homeWorld.population}</td>
+                                </tr>
+                            </tbody>
+                        )}
                 </>
-            </TableStyled>
+            </TableStyled>        
         </>
     )
 }

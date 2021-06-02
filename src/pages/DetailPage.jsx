@@ -4,7 +4,6 @@ import HomeWorld from '../components/HomeWorld';
 import Species from '../components/Species';
 import Starship from '../components/Starship';
 import Vehicle from '../components/Vehicle';
-import { TableStyled } from '../styles/TableStyled';
 
 export default function DetailPage(props) {
     const [ characterDetail, setCharacterDetail] =useState(null);
@@ -16,7 +15,7 @@ export default function DetailPage(props) {
     },[])
 
     return (
-        <div className="text-white bg">          
+        <div className="text-white bg p-2">          
             {!characterDetail && <p>Loading...</p>}
             <div>
                 { characterDetail && (

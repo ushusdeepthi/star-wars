@@ -14,29 +14,27 @@ const TableStyled=styled.table `
       text-align:center;
       color:black;
     }
-
-tbody tr td {
-  font-family: 'Open Sans', sans-serif;
-  font-weight:400;
-  color:#5f6062;
-  font-size:16px;
-  padding:20px 20px 20px 20px;
-  border-bottom:1px solid #e0e0e0;
-  
-}
-
-tbody tr:nth-child(2n) {
-  background:#f0f3f5;
-}
-
-tbody tr:last-child td {
-  border-bottom:none;
-  &:first-child {
-   border-radius:5px;
+  tbody tr td {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    color:#5f6062;
+    font-size:16px;
+    padding:20px 20px 20px 20px;
+    border-bottom:1px solid #e0e0e0;    
   }
-  &:last-child {
+
+  tbody tr:nth-child(2n) {
+    background:#f0f3f5;
+  }
+
+  tbody tr:last-child td {
+    border-bottom:none;
+    &:first-child {
     border-radius:5px;
-  }
+    }
+    &:last-child {
+      border-radius:5px;
+    }
 }
 
 `

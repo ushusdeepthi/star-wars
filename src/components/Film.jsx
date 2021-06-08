@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import { TableStyled } from '../styles/TableStyled';
 
 export default function Film({film,index}) {
-    const updatedFilm = film.replace(/^http:\/\//i, 'https://');
+    const updatedFilm = film.replace('http','https');
     const [films, setFilms] = useState(null)
     useEffect(()=>{
         fetch(updatedFilm)

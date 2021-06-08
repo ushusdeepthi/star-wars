@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import { TableStyled } from '../styles/TableStyled';
 
 export default function Species({singleSpecies,index}) {
-    const updatedSingleSpecies = singleSpecies.replace(/^http:\/\//i, 'https://');
+    const updatedSingleSpecies = singleSpecies.replace('http','https');
     const [species, setSpecies] = useState(null)
     useEffect(()=>{
         fetch(updatedSingleSpecies)

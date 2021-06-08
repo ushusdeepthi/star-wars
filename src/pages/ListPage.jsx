@@ -3,13 +3,26 @@ import { BiSearchAlt } from "react-icons/bi";
 import CharacterName from '../components/CharacterName';
 
 export default function ListPage() {
-    const [characterList, setCharacterList] =useState(null);
+    const [characterList, setCharacterList] =useState([]);
     const [searchTerm, setSearchTerm]=useState('')
     const inputRef = useRef()
-    useEffect(()=>{
-        fetch('https://swapi.dev/api/people/')
-        .then(resp=>resp.json())
-        .then(data=>setCharacterList(data.results)) 
+    let url = 'https://swapi.dev/api/people/'; 
+        useEffect(()=>{
+            let result_found = false;
+            const total_arr = [];
+            function fetchNow(url){
+                fetch(url)
+                .then(resp=>resp.json())
+                .then(data=>{                                                           
+                     total_arr.push(...data.results); 
+                     if(!data.next) {
+                         setCharacterList(total_arr)
+                         result_found = true
+                        }
+                     else fetchNow((data.next).replace('http','https'))                                       
+                })
+            }                     
+        fetchNow(url);
     },[])
     const handleOnClick = ()=>{
         const input = inputRef.current

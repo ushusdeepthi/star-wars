@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import { TableStyled } from '../styles/TableStyled';
 
 export default function Starship({starship,index}) {
-    const updatedStarship = starship.replace(/^http:\/\//i, 'https://');
+    const updatedStarship = starship.replace('http','https');
     const [starships, setStarships] = useState(null)
     useEffect(()=>{
         fetch(updatedStarship)

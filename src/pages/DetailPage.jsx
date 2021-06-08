@@ -7,7 +7,13 @@ import Vehicle from '../components/Vehicle';
 
 export default function DetailPage(props) {
     const [ characterDetail, setCharacterDetail] =useState(null);
-    const id= props.match.params.id
+    let id = 0;
+    if(props.match.params.id < 17){
+        id= props.match.params.id
+    }
+    else{
+        id= Number(props.match.params.id) + 1;
+    }
     useEffect(()=>{
         fetch(`https://swapi.dev/api/people/${id}/`)
         .then(resp=>resp.json())

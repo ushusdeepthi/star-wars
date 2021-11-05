@@ -2,10 +2,9 @@ import React, { useState, useEffect} from 'react'
 import { TableStyled } from '../styles/TableStyled';
 
 export default function Vehicle({vehicle,index}) {
-    const updatedVehicle= vehicle.replace(/^http:\/\//i, 'https://');
     const [vehicles, setVehicles] = useState(null)
     useEffect(()=>{
-        fetch(updatedVehicle)
+        fetch(vehicle)
         .then(resp => resp.json())
         .then(data =>setVehicles(data))
     },[])

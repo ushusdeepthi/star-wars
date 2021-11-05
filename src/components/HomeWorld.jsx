@@ -2,10 +2,9 @@ import React, { useState, useEffect} from 'react'
 import { TableStyled } from '../styles/TableStyled'
 
 export default function HomeWorld({homeworldapi}) {
-    const updatedPlanet = homeworldapi.replace('http','https');
     const [homeWorld, setHomeWorld]= useState(null)
     useEffect(()=>{
-        fetch(updatedPlanet)
+        fetch(homeworldapi)
         .then(resp => resp.json())
         .then(data => setHomeWorld(data))
     },[])

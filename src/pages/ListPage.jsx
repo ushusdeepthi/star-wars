@@ -19,7 +19,7 @@ export default function ListPage() {
                          setCharacterList(total_arr)
                          result_found = true
                         }
-                     else fetchNow((data.next).replace('http','https'))                                       
+                     else fetchNow((data.next))                                       
                 })
             }                     
         fetchNow(url);
